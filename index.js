@@ -1,12 +1,30 @@
-const http = require("http");
+// const http = require("http");
 
-const PUERTO = 8080;
+// const server = http.createServer((req, res) => {
+//   res.writeHead(200, { "Content-Type": "text/html" });
+//   res.end(`
+//     <!DOCTYPE html>
+//     <html lang="en">
+//     <head>
+//         <meta charset="UTF-8">
+//         <meta http-equiv="X-UA-Compatible" content="IE=edge">
+//         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+//         <title>CRUD</title>
+//     </head>
+//     <body>
+//         <h1>Hola, Mundo!</h1>
+//     </body>
+//     </html>
+//     `);
+// });
 
-const server = http.createServer((req, res) => {
-  res.writeHead(200);
-  res.end("Hola Mundo!");
+// server.listen(8080);
+
+const express = require("express");
+const app = express();
+
+app.get("/", (req, res) => {
+  res.end("<h1>Hello World</h1>");
 });
 
-console.log(`Escuchando en el puerto ${PUERTO}`);
-
-server.listen(PUERTO);
+app.listen(8080);
